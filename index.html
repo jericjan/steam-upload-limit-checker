@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Steam Upload Limit Checker</title>
+  <meta name="description" content="banana!">
+<style>
+div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+body {
+    background-color: black;
+    margin: 0;
+}
+h1 {
+    color: white;
+    font-size: 9em;
+}
+</style>
+
+</head>
+
+<body>
+<div>
+<h1 id='status'>Checking...</h1>
+</div>
+<script>
+fetch('https://old-crow-82.deno.dev/')
+  .then((response) => response.json())
+  .then((data) => {
+	document.querySelector("#status").innerHTML = data['msg']
+  });
+</script>
+</body>
+</html>
